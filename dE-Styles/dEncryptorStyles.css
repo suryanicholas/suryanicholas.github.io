@@ -1,0 +1,92 @@
+@font-face {
+    font-family: Chakra;
+    src: url(ChakraPetch-Bold.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Chakra;
+    text-decoration: none;
+    list-style: none;
+}
+:root{
+    --bg-color: #222327;
+    --text-color: #fff;
+    --main-color: #29fd53;
+}
+
+body{
+    min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 0 30px 0 80px;
+    transition: all .50s ease;
+    background-color:#0f1011;
+        box-shadow: 0px 0px 15px black
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo span{
+    color: var(--text-color);
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.navbar{
+    display: flex;
+}
+
+.navbar a{
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 0 0 50px;
+    transition: all .50s ease;
+}
+
+.navbar a:hover{
+    color: var(--main-color);
+}
+
+.navbar a.istrue{
+    color: var(--main-color);
+}
+
+@media (max-width: 1080px){
+    header{
+        display: block;
+        padding: 0;
+        background-color:#0f1011;
+        box-shadow: 0px 0px 15px black;
+    }
+    .logo{
+        justify-content: center;
+    }
+
+    .navbar{
+        justify-content: center;
+    }
+    
+    .navbar a{
+        font-size: 14px;
+        margin: 0 15px;
+    }
+}

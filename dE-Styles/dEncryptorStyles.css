@@ -71,6 +71,27 @@ header{
     color: var(--main-color);
 }
 
+.contents{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color:#0f1011;
+}
+
+.buron{
+    position: fixed;
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 400px;
+}
+
+
 @media (max-width: 1080px){
     header{
         display: block;

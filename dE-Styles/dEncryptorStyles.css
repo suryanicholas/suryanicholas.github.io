@@ -82,13 +82,22 @@ header{
     background-color:#0f1011;
 }
 
-.buron{
+.contents-news{
     position: fixed;
+    display: block;
+    width: 100%;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color:#0f1011;
+}
+
+.buron{
     display: flex;
     width: 200px;
     justify-content: center;
     align-items: center;
-    margin-top: 400px;
 }
 
 

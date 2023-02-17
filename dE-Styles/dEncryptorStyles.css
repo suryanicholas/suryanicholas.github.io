@@ -13,14 +13,15 @@
 }
 :root{
     --bg-color: #222327;
-    --text-color: #fff;
+    --istrue-color: #fff;
     --main-color: #29fd53;
+    --isfalse-color: #bebebe;
 }
 
 body{
     min-height: 100vh;
     background: var(--bg-color);
-    color: var(--text-color);
+    color: var(--istrue-color);
 }
 
 header{
@@ -45,7 +46,7 @@ header{
 }
 
 .logo span{
-    color: var(--text-color);
+    color: var(--istrue-color);
     font-size: 3rem;
     font-weight: 600;
 }
@@ -55,7 +56,7 @@ header{
 }
 
 .navbar a{
-    color: var(--text-color);
+    color: var(--isfalse-color);
     font-size: 1.1rem;
     font-weight: 500;
     margin: 0 0 0 50px;
@@ -63,7 +64,7 @@ header{
 }
 
 .navbar a:hover{
-    color: var(--main-color);
+    color: var(--istrue-color);
 }
 
 .navbar a.istrue{

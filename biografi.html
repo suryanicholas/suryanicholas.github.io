@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="dE-Styles/SN-Styles.css">
+        <title>Biografi</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">
+                <a href="biografi.html">BIOGRAFI</a>
+            </div>
+            <div id="navbar">
+                <a class="buttons" href="#">Introduce</a>
+                <a class="buttons" href="#">History</a>
+                <a class="buttons" href="#">Experience</a>
+                <a class="buttons" href="#">Contribution</a>
+            </div>
+        </div>
+        <script>
+            var btnContainer = document.getElementById("navbar");
+            var btns = btnContainer.getElementsByClassName("buttons");
+
+            for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+
+                if (current.length > 0) {
+                current[0].className = current[0].className.replace(" active", "");
+                }
+
+                this.className += " active";
+            });
+            }
+        </script>
+    </body>
+</html>

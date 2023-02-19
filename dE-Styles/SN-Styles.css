@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Chakra;
+    src: url(ChakraPetch-Bold.ttf);
+}
+
+:root{
+    --bg-color: #13005f;
+    --py-color: #9861ff;
+    --btdac-color: #ccabfb;
+    --btac-color: #fff;
+}
+
+body{
+    margin: 0;
+    background-color: var(--bg-color);
+    font-family: Chakra;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    background-color: var(--py-color);
+    box-shadow: 0 0 10px;
+}
+
+.logo{
+    display: flex;
+    width: 250px;
+    justify-content: center;
+}
+
+.logo a{
+    font-size: 2.5em;
+    text-decoration: none;
+    color: var(--btac-color);
+}
+
+.buttons{
+    padding: 2px 10px;
+    margin: 0 20px;
+    font-size: 20px;
+    text-decoration: none;
+    align-items: center;
+    color: var(--btdac-color);
+    border-radius: 7px;
+    transition: .5s ease;
+}
+
+.active{
+    color: var(--btac-color);
+    background-color: #13005f;
+    box-shadow: inset 0 0 5px #000;
+}
+
+.buttons:hover{
+    color: var(--btac-color);
+}

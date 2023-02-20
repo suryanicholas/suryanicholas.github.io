@@ -93,14 +93,49 @@ body{
     1px 1px 3px var(--btdac-color);
 }
 
-.this-data p{
-    font-size: 24px;
-}
-
-.my-data{
+.this-data p, .my-data p{
     font-size: 24px;
 }
 
 .thisGallery img{
     width: 200px;
+}
+
+@media (max-width:425px){
+    .header{
+        display: block;
+        height: 80px;
+    }
+
+    .logo{
+        display: flex;
+        width: 100%;;
+    }
+    
+    .logo a{
+        font-size: 2.5em;
+        color: var(--btac-color);
+    }
+
+    .buttons{
+
+        justify-content: center;
+        font-size: 12px;
+        margin: 0 1px;
+        cursor:pointer;
+    }
+
+    #navbar{
+        display: flex;
+        justify-content: center;
+    }
+
+    .contents {
+        margin-top: 90px;
+    }
+
+    /*Style Format for Profile*/
+    .this-data p, .my-data p{
+        font-size: 14px;
+    }
 }

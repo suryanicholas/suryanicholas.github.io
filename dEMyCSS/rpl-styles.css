@@ -1,0 +1,24 @@
+body{
+background-color: #000;
+}
+.contoh{
+    padding: 20px;
+    background-color: #ad03ad;
+    color: #fff;
+    display: flex;
+    height: 50px;
+    box-shadow: inset 5px 5px 5px #fff, ;
+    border-radius: 20px;
+}
+
+a{
+    color: #fff;
+}
+
+.abcd a{
+    color: aqua;
+}
+
+.linka:hover{
+    color: red;
+}

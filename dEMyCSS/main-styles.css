@@ -1,0 +1,59 @@
+@font-face {
+    font-family: Chakra Petch;
+    src: url(font/ChakraPetch-Bold.ttf);
+}
+
+body{
+    margin: 0;
+    font-family: Chakra Petch;
+    background: fixed center url(/zeinzh.github.io/lib/img/Inazuma_Seirai_Island.png);
+    background-size: cover;
+}
+.header{
+    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.this-logo{
+    text-align: center;
+    justify-content: center;
+    border-radius: 50px 0;
+    background-color: #2f1152;
+    box-shadow: inset 5px 5px 10px #8e2cff,
+    inset -5px -5px 10px #5400b4;
+    width: 300px;
+}
+
+.this-logo a{
+    margin: 5px 30px;
+    font-size: 60px;
+    color: #fff;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.marquee-link{
+    display: flex;
+}
+.marquee-link a{
+    background-color: #646464;
+    color: #fff;
+    margin: 0 10px;
+    padding: 0 30px;
+    font-size: 20px;
+    border-radius: 50px 0;
+    text-decoration: none;
+}
+
+.youtube{
+    box-shadow: inset 1px 1px 25px #ff0000;
+}
+.instagram{
+    box-shadow: inset 1px 1px 25px #ff00dd;
+}
+.facebook{
+    box-shadow: inset 1px 1px 25px #0044ff;
+}
+.whatsapp{
+    box-shadow: inset 1px 1px 25px #15ff00;
+}

@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Play&family=Prompt:wght@300&family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #c7b0ff;
+}
+
+.canvasmenu{
+    position: sticky;
+    top: 0;
+    padding: 15px;
+    display: flex;
+    background-color: #130044;
+    justify-content: center;
+    
+}
+
+.menu-items{
+    margin: 0 20px;
+    width: 150px;
+    color: #3400b8;
+    font-family: 'Play', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+.menu-items:hover{
+    color: #fff;
+}
+
+.utama{
+    display: inline-block;
+    text-align: center;
+}
+.titleutama{
+    margin: 10px 0;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-align: center;
+    background-color: #3300b4;
+}
+.imgprofile{
+    margin: 15px;
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px #7e4bff;
+}
+.contents-utama h1{
+    margin: 0 auto;
+    width: 300px;
+    color: #130044;
+    background-color: #7e4bff;
+    border-radius: 50px 50px 0 0;
+}
+.contents-utama p{
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+    color: #130044;
+    width: 80%;
+    text-align: justify;
+    background-color: #7e4bff;
+}
+
+@media (max-width:425px) {
+    .menu-items{
+        margin: 0 10px;
+        font-size: 12px;
+    }
+
+    .contents-utama h1{
+        font-size: 20px;
+        width: 200px;
+    }
+}

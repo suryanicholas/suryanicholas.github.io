@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        nav{
+            margin: 10px 0;
+            position: relative;
+            display: flex;
+            background-color: #fff;
+        }
+        nav  a{
+            position: relative;
+            margin: 0 20px;
+            font-size: 2em;
+            color: #000;
+            text-decoration: none;
+        }
+
+        #marker{
+            position: absolute;
+            left: 0;
+            height: 4px;
+            width: 0;
+            background-color: #000;
+            bottom: -8px;
+            transition: .5s;
+            border-radius: 8px;
+        }
+        .canvas a:hover ~ #marker{
+            left:0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="marker"></div>
+        <div class="canvas"><a href="#">Link 1</a></div>
+        <div class="canvas"><a href="#">Link 2</a></div>
+        <div class="canvas"><a href="#">Link 3</a></div>
+        <div class="canvas"><a href="#">Link 4</a></div>
+        <div class="canvas"><a href="#">Link 5</a></div>
+    </nav>
+    <!-- <script>
+        var marker = document.querySelector('#marker');
+        var canvas = document.querySelectorAll('.canvas');
+        var item = document.querySelectorAll('.canvas a');
+
+        function indicator(e, reset = false){
+            if (reset) {
+                marker.style.left = "0";
+                marker.style.width = "0";
+            } else {
+                marker.style.left = e.offsetLeft+"px";
+                marker.style.width = e.offsetWidth+"px";
+            }
+        }
+
+        canvas.forEach(canvasItem => {
+            canvasItem.addEventListener('mouseover', () => {
+                var firstA = canvasItem.querySelector('a');
+                indicator(firstA);
+            });
+
+            canvasItem.addEventListener('mouseleave', () => {
+                indicator(null, true);
+            });
+        });
+    </script> -->
+</body>
+</html>

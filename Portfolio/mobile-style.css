@@ -1,8 +1,9 @@
 @media (max-width: 393px){
-    .logo{
-        display: none;
+    .logo a{
+        font-size: 28px;
     }
     .buttons{
+        display: block;
         position: absolute;
         color: #fff;
         right: 15px;

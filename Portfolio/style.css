@@ -173,6 +173,9 @@ body{
 .list-link, .afiliasi{
     text-align: center;
 }
+.buttons{
+    display: none;
+}
 .list-link a, .afiliasi a{
     font-size: 16px;
     font-weight: 900;

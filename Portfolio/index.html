@@ -11,17 +11,32 @@
 <body>
     <div class="container">
         <div class="canvasmenu">
+            <a class="logo" href="#">S</a>
             <div class="menu">
-                <a href="#" class="menu-items">Utama</a>
-                <a href="#" class="menu-items">Pendidikan</a>
-                <a href="#" class="menu-items">Keluarga</a>
-                <a href="#" class="menu-items">Pengalaman</a>
-                <a href="#" class="menu-items">Proyek</a>
+                <a href="#" class="menu-items active">
+                    <span><ion-icon name="home-sharp"></ion-icon></span>
+                    <div class="item-name">Home</div>
+                </a>
+                <a href="#" class="menu-items">
+                    <span><ion-icon name="school-sharp"></ion-icon></span>
+                    <div class="item-name">Pendidikan</div>
+                </a>
+                <a href="#" class="menu-items">
+                    <span><ion-icon name="people-circle-sharp"></ion-icon></span>
+                    <div class="item-name">Keluarga</div>
+                </a>
+                <a href="#" class="menu-items">
+                    <span><ion-icon name="cube-sharp"></ion-icon></span>
+                    <div class="item-name">Pengalaman</div>
+                </a>
+                <a href="#" class="menu-items">
+                    <span><ion-icon name="server-sharp"></ion-icon></span>
+                    <div class="item-name">Proyek</div>
+                </a>
             </div>
         </div>
         <div class="canvasutama">
             <div class="utama">
-                <div class="titleutama">Profil</div>
                 <img class="imgprofile" src="BulekV2.png" alt="">
                 <div class="contents-utama">
                     <h1>Surya Nicholas</h1>
@@ -41,6 +56,22 @@
                 </div>
             </div>
         </div>
+        
     </div>
+    <script>
+        var getMenu = document.querySelectorAll('.menu-items');
+
+        getMenu.forEach(function(item) {
+            item.addEventListener('click', function() {
+                getMenu.forEach(function(item) {
+                    item.classList.remove('active');
+                });
+            
+                item.classList.add('active');
+            })
+        })
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

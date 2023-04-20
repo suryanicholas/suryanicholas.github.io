@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Surya Nicholas Tarigan</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile-style.css">
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 </head>
 <body>
     <div class="container">
         <div class="canvasmenu">
-            <a class="logo" href="#">S</a>
+            <div class="canvaslogo"><a class="logo" href="#">S</a></div>
+            <div class="menubutton"><a href="#"><ion-icon name="menu-sharp"></ion-icon></a></div>
             <div class="menu">
                 <a href="#" class="menu-items active">
-                    <span><ion-icon name="home-sharp"></ion-icon></span>
-                    <div class="item-name">Home</div>
+                    <span><ion-icon name="person-sharp"></ion-icon></span>
+                    <div class="item-name">Profil</div>
                 </a>
                 <a href="#" class="menu-items">
                     <span><ion-icon name="school-sharp"></ion-icon></span>
@@ -31,35 +33,72 @@
                 </a>
                 <a href="#" class="menu-items">
                     <span><ion-icon name="server-sharp"></ion-icon></span>
-                    <div class="item-name">Proyek</div>
+                    <div class="item-name">Project</div>
                 </a>
             </div>
         </div>
-        <div class="canvasutama">
-            <div class="utama">
-                <img class="imgprofile" src="BulekV2.png" alt="">
-                <div class="contents-utama">
-                    <h1>Surya Nicholas</h1>
-                    <p>
-                        Perkenalkan nama saya Surya Nicholas Tarigan, lahir di Medan, Sumatera Utara.
-                        Saat ini saya sebagai Mahasiswa di Universitas Katolik Santo Thomas Medan.
-                        Ini adalah teks yang menjelaskan tentang saya.
-                        Ini adalah teks yang menjelaskan tentang saya.
-                        Ini adalah teks yang menjelaskan tentang saya.
-                        Perkenalkan nama saya Surya Nicholas Tarigan, lahir di Medan, Sumatera Utara.
-                        Saat ini saya sebagai Mahasiswa di Universitas Katolik Santo Thomas Medan.
-                        Ini adalah teks yang menjelaskan tentang saya.
-                        Ini adalah teks yang menjelaskan tentang saya.
-                        Ini adalah teks yang menjelaskan tentang saya.
-                        
-                    </p>
+        <div class="canvascontents">
+            <div id="cthome" class="contents">
+                <h1>Selamat Datang</h1>
+                <div class="descriptions">
+                    Ini adalah website yang dibuat untuk keperluan Pratikum mata kuliah Pemrograman Web oleh Surya Nicholas Tarigan. Situs ini masih dalam tahap pengembangan secara bertahap mengikuti arahan yang diberikan oleh dosen Pengampu Pak Wasit Ginting.
+                </div>
+            </div>
+            <div id="ctprofil" class="contents">
+                <div class="profil-photo">
+                    <img src="/zlibraries/dEmyImage/profil-picture.png" alt="">
+                </div>
+                <div class="profil-about">
+                    <div class="about-title">Tentang Saya</div>
+                    <div class="about-details">
+                        Perkenalkan nama saya Surya Nicholas Tarigan, lahir di Medan 13 Maret 2001. Saat ini saya sedang menempuh pendidikan S1 Teknik Informatika di Universitas Katolik Santo Thomas Medan.
+                        Perkenalkan nama saya Surya Nicholas Tarigan, lahir di Medan 13 Maret 2001. Saat ini saya sedang menempuh pendidikan S1 Teknik Informatika di Universitas Katolik Santo Thomas Medan.
+                        Perkenalkan nama saya Surya Nicholas Tarigan, lahir di Medan 13 Maret 2001. Saat ini saya sedang menempuh pendidikan S1 Teknik Informatika di Universitas Katolik Santo Thomas Medan.
+                    </div>
+                </div>
+            </div>
+            <div id="ctstudy" class="contents">
+
+            </div>
+            <div id="ctfamily" class="contents">
+
+            </div>
+            <div id="ctexperience" class="contents">
+
+            </div>
+            <div id="ctproject" class="contents">
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-link">
+                <div class="footer-head">Halaman</div>
+                <a href="#">Profil</a>
+                <a href="#">Pendidikan</a>
+                <a href="#">Keluarga</a>
+                <a href="#">Pengalaman</a>
+                <a href="#">Project</a>
+            </div>
+            <div class="section">
+                <div class="footer-support">
+                    <div class="footer-head">Kontak</div>
+                    <a class="whatsapp" href="https://wa.me/6282364065134"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                    <a class="facebook" href="https://facebook.com/zeinzhaja"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a class="twitter" href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a class="mail" href="#"><ion-icon name="mail-sharp"></ion-icon></a>
+                </div>
+                <div class="footer-afiliasi">
+                    <div class="footer-head">Afiliasi</div>
+                    <a href="https://ust.ac.id/">UNIKA Medan</a>
+                    <a href="https://w3schools.com/">W3Schools</a>
                 </div>
             </div>
         </div>
-        
     </div>
     <script>
         var getMenu = document.querySelectorAll('.menu-items');
+        var getButton = document.querySelector('.menubutton');
+        var getMMenu = document.querySelector('.menu');
 
         getMenu.forEach(function(item) {
             item.addEventListener('click', function() {
@@ -70,6 +109,14 @@
                 item.classList.add('active');
             })
         })
+        
+        getButton.addEventListener('click', () => {
+            if (getMMenu.classList.contains('show')) {
+                getMMenu.classList.remove('show');
+            } else {
+                getMMenu.classList.add('show');
+            }
+        });
     </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

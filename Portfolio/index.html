@@ -15,6 +15,7 @@
             <div class="logo">
                 <a href="/Portfolio/">Portofolio</a>
             </div>
+            <div class="buttons"><ion-icon id="ionicons" name="menu-sharp"></ion-icon></div>
             <div class="navbar">
                 <div class="navbar-items">
                     <a href="#de-profil">
@@ -112,7 +113,7 @@
         </div>
         <div class="footer">
             <div class="list-link">
-                <div class="title">Daftar Halaman</div>
+                <div class="title">Halaman</div>
                 <a href="#">Profil</a>
                 <a href="#">Pendidikan</a>
                 <a href="#">Keluarga</a>
@@ -129,8 +130,8 @@
                 </div>
             </div>
             <div class="afiliasi">
-                <div class="title">Daftar Afiliasi</div>
-                <a href="#">Universitas Katolik Santo Thomas</a>
+                <div class="title">Afiliasi</div>
+                <a href="#">UNIKA</a>
                 <a href="#">W3Schools</a>
                 <a href="#">Ionicons</a>
             </div>
@@ -158,6 +159,21 @@
                 this.closest(".navbar-items").classList.add("active");
             });
         });
+    </script>
+    <script>
+        var btn = document.querySelector('.buttons');
+        var menu = document.querySelector('.navbar');
+        var icons = document.querySelector('#ionicons');
+
+        btn.addEventListener('click', () => {
+            if (menu.classList.contains('show')) {
+                menu.classList.remove('show');
+                icons.name = 'menu-sharp';
+            } else {
+                menu.classList.add('show')
+                icons.name = 'close-sharp';
+            }
+        })
     </script>
     <script>
         var items = document.querySelectorAll('.navbar-items');

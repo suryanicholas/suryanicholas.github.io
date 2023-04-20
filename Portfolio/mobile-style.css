@@ -1,0 +1,90 @@
+@media (max-width: 393px){
+    .logo{
+        display: none;
+    }
+    .buttons{
+        position: absolute;
+        color: #fff;
+        right: 15px;
+        font-size: 30px;
+        z-index: 99;
+    }
+    .navbar{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+        padding: 60px 0;
+        height: 100vh;
+        display: block;
+        background: #1b003a;
+        transform: translateX(180px);
+        transition: .5s;
+    }
+    .navbar.show{
+        transform: translateX(0);
+    }
+    .navbar-items{
+        position: relative;
+        display: flex;
+        margin-right: 15px;
+        align-items: center;
+        justify-content: right;
+        width: 160px;
+        height: auto;
+    }
+    .navbar-items a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: right;
+        font-weight: 900;
+    }
+    .navbar-items a .icon{
+        position: relative;
+        display: block;
+        font-size: 30px;
+        transition: .3s;
+        text-align: center;
+        color: #ffffff77;
+    }
+    .navbar-items.active a .icon{
+        color: #a200ff;
+        transform: translateY(0px);
+    }
+    .navbar-items a .text{
+        position: absolute;
+        right: 33px;
+        width: 100%;
+        text-transform: uppercase;
+        color: #ffffff88;
+        transform: translate(0,0,0);
+        transform: translateX(0);
+        letter-spacing: 1px;
+        opacity: 1;
+        transition: .3s;
+    }
+    .navbar-items.active a .text{
+        color: #fff;
+        transform: translateX(0);
+    }
+
+    .contents{
+        padding: 80px 0 0 0;
+    }
+    #de-main .title{
+        font-size: 36px;
+        margin: 30px 0;
+    }
+
+    .list-link a, .afiliasi a{
+        font-size: 12px;
+    }
+    .contact-list a{
+        font-size: 24px;
+    }
+    .footer .title{
+        font-size: 12px;
+    }
+}

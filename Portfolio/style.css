@@ -7,185 +7,199 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Play';
 }
 
 body{
-    background: #9f76ff;
-    font-family: 'Play';
+    background: #ffcfb8;
 }
-.canvasmenu{
-    position: absolute;
+
+.header{
+    position: fixed;
     top: 0;
     width: 100%;
-    padding: 15px;
+    height: 70px;
     display: flex;
     align-items: center;
-    background: #000;
+    background: #1b003a;
 }
 .logo{
-    margin: 0 30px;
-    width: 50px;
-    height: 50px;
+    position: relative;
+    margin: 0 15px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-decoration: none;
-    font-size: 36px;
-    font-weight: bold;
-    border-radius: 100%;
-    background: #000;
-    box-shadow: 3px 3px 10px #7c7c7c,
-    3px 0px 10px #7c7c7c,
-    -3px -3px 10px #5e5e5e,
-    -3px 0 10px #202020,
-    inset 5px 5px 7px #b6b6b6,
-    inset -1px -3px 7px #5c5c5c;
+    width: auto;
+    padding: 5px 30px;
+    background: #1b003a;
+    border-radius: 0 50px;
+    box-shadow: inset -10px -5px 10px #4f00aa,
+    inset 10px 5px 10px #110025,
+    -10px -5px 10px #200044;
 }
-.menu{
+.logo a{
+    color: #fff;
+    font-size: 40px;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.navbar{
+    position: relative;
+    top: 15px;
+    width: 100%;
     display: flex;
     justify-content: right;
-    align-items: center;
-    margin-left: 10px;
-    width: 100%;
-    height: 50px;
-    border-radius: 10px;
-    transition: all .3s;
 }
-.menubutton{
-    display: none;
-}
-.menu-items{
-    margin: 0 10px;
-    padding: 25px;
-    width: 40px;
+.navbar-items{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 150px;
     height: 40px;
+}
+.navbar-items a{
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: #464646;
-    font-size: 28px;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
     font-weight: 900;
-    text-decoration: none;
-    border-radius: 50px;
-    background: #000;
-    box-shadow: 0 0 5px #fff;
-    transition: .3s ease;
 }
-.menu-items:hover{
-    color: #fff;
-    box-shadow: 0 0 20px #fff;
-}
-.menu-items .item-name{
-    position: absolute;
-    right: 370px;
-    display: none;
-    align-items: center;
-    height: 50px;
-}
-.menu-items ion-icon{
-    transform: translateY(3px);
-}
-.menu-items.active{
-    justify-content: center;
-    color: #fff;
-    box-shadow: inset 5px 5px 5px rgba(255,255,255,0.75),
-    inset 0 0 3px #fff;
-}
-.menu-items.active .item-name{
-    display: flex;
-}
-
-.canvascontents{
-    padding: 80px 0 0 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-}
-
-#cthome{
+.navbar-items a .icon{
+    position: relative;
     display: block;
-    margin: 200px 80px;
-    color: #0f0030;
-}
-#cthome h1{
-    font-size: 72px;
-    font-weight: 900;
+    line-height: 70px;
+    font-size: 30px;
+    transition: .3s;
     text-align: center;
-    border-radius: 100%;
+    color: #ffffff77;
 }
-#cthome .descriptions{
-    margin: 10px 0;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+.navbar-items a:hover .icon{
+    color: #ffffff;
+}
+.navbar-items.active a .icon{
+    color: #a200ff;
+    transform: translateY(-16px);
+}
+.navbar-items a .text{
+    position: absolute;
+    text-transform: uppercase;
+    color: #fff;
+    transform: translateY(25px);
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: .3s;
+}
+.navbar-items.active a .text{
+    opacity: 1;
+    transform: translateY(0);
 }
 
-#ctprofil{
-    display: none;
-    margin: 30px 80px;
+.main{
+    background: #fff;
+    min-height: 100vh;
 }
-.profil-photo{
-    margin: 0 0 10px 0;
+.contents{
     display: flex;
+    margin: 0 25px;
+    padding: 80px 150px 0 150px;
+    min-height: 100vh;
+}
+.canvas{
+    width: 100%;
+}
+.canvas .title{
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+    color: #000;
+}
+.canvas .text{
+    display: flex;
+    font-size: 20px;
+    text-align: center;
+}
+#de-main{
+    align-items: center;
+}
+#de-main .title{
+    font-size: 64px;
+    margin: 30px 0;
+}
+#de-profil .title{
+    margin-bottom: 30px;
+}
+#de-profil .photo{
+    margin-bottom: 10px;
+    display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
 }
-.profil-photo img{
-    width: 300px;
+#de-profil img{
+    width: 260px;
     border-radius: 50%;
 }
-.about-title{
-    text-align: center;
-    font-size: 44px;
-    font-weight: 900;
+#de-study{
+    align-items: center;
 }
-.about-details{
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+#de-study .title{
+    margin-bottom: 10px;
 }
+#de-family{
+    align-items: center;
+}
+#de-family .title{
+    margin-bottom: 10px;
+}
+#de-experience{
+    align-items: center;
+}
+#de-experience .title{
+    margin-bottom: 10px;
+}
+
 
 .footer{
     display: flex;
-    width: 100%;
-    padding: 15px;
-    justify-content: center;
+    color: #fff;
     background: #000;
+    min-height: 15vh;
 }
-.footer-link{
-    padding: 0 150px 0 0;
+.list-link, .contact-list, .afiliasi{
+    margin: 15px;
+    width: 100%;
 }
-.footer-head{
-    color: #8d14ff;
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 2px;
+.list-link, .afiliasi{
+    text-align: center;
 }
-.footer-link a, .footer-afiliasi a{
+.list-link a, .afiliasi a{
     font-size: 16px;
-    color: #3b00b9;
+    font-weight: 900;
+    color: #ffffff88;
     text-decoration: none;
-    list-style: none;
     display: list-item;
+    list-style: none;
 }
-.footer-support a{
-    font-size: 30px;
-    color: #3b00b9;
-}
-.footer-link a:hover, .footer-afiliasi a:hover{
+.list-link a:hover, .contact-list a:hover, .afiliasi a:hover{
     color: #fff;
 }
+.contact-list .list{
+    display: flex;
+    justify-content: center;
+}
+.contact-list a{
+    margin: 0 auto;
+    color: #ffffff88;
+    font-size: 48px;
+}
+.footer .title{
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    font-weight: 900;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: inset 5px 5px 10px #ffffff55;
 
-.whatsapp:hover{
-    color: #00ff0d;
-}
-.facebook:hover{
-    color: #003cff;
-}
-.twitter:hover{
-    color: #00ccff;
-}
-.mail:hover{
-    color: #ffd900;
 }

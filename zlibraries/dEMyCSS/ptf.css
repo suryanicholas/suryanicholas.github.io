@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'Play';
+    src: url(/zlibraries/dEthisGoogleFonts/Play-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Play',sans-serif;
+}
+
+body{
+    width: 100%;
+    background: #d9c4ff;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    background: #0a001d;
+    z-index: 99;
+}
+.logo{
+    margin-left: 10px;
+}
+.logo a{
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+}
+.tombol{
+    display: none;
+}
+header .menu{
+    position: absolute;
+    right: 0;
+    display: flex;
+}
+header .menu .menu-link{
+    margin-right: 10px;
+    width: 120px;
+    text-align: center;
+}
+header .menu .menu-link a{
+    color: #ffffff75;
+    font-size: 18px;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: .5s;
+}
+header .menu .menu-link a:hover{
+    color: #ffffff;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    padding: 60px 20px;
+    height: 100vh;
+}
+.section{
+    display: flex;
+    width: 100%;
+    background: #fff;
+    height: fit-content;
+    border-radius: 250px 10px 10px 250px;
+}
+.foto-saya{
+    align-items: center;
+}
+.foto-saya img{
+    width: 360px;
+    border-radius: 100%;
+    box-shadow: 3px 0 15px;
+    transform: translateY(2px);
+}
+.section .konten h1{
+    display: flex;
+    color: #fff;
+    font-size: 36px;
+    background: #5900ff;
+    padding-left: 30px;
+    border-radius: 0 0 0 120px;
+}
+.section .konten .text{
+    padding-top: 10px;
+    padding-left: 30px;
+    color: #000;
+    font-size: 28px;
+}
+
+footer{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    background: #0a001d;
+    min-height: 25vh;
+}
+.list-link, .contacts{
+    width: 100%;
+    margin: 20px;
+}
+footer .title{
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    width: 200px;
+}
+.list-link a{
+    display: list-item;
+    text-align: left;
+    list-style: none;
+    color: #ffffff89;
+    width: fit-content;
+    text-decoration: none;
+}
+.list-link a:hover{
+    color: #fff;
+}
+
+.contacts .list a{
+    margin: 0 10px;
+    font-size: 36px;
+    color: #ffffff89;
+}
+.contacts .list a:hover{
+    color: #fff;
+}
+
+@media (max-width:425px){
+    .tombol{
+        position: absolute;
+        right: 0;
+        display: block;
+        color: #fff;
+        font-size: 30px;
+    }
+    header .menu{
+        display: none;
+    }
+    
+    .foto-saya img{
+        width: 200px;
+    }
+
+    section{
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+        height: 100vh;
+    }
+    .section{
+        display: flex;
+        width: 100%;
+        background: #fff;
+        height: auto;
+        border-radius: 0;
+    }
+    .section .konten h1{
+        display: flex;
+        color: #fff;
+        font-size: 24px;
+        background: #5900ff;
+        padding-left: 30px;
+        border-radius: 0 0 0 120px;
+    }
+    .section .konten .text{
+        padding-top: 10px;
+        padding-left: 20px;
+        color: #000;
+        font-size: 16px;
+    }
+}

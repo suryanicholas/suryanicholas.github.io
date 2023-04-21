@@ -17,31 +17,31 @@
             </div>
             <div class="buttons"><ion-icon id="ionicons" name="menu-sharp"></ion-icon></div>
             <div class="navbar">
-                <div class="navbar-items">
+                <div class="navbar-items de-profil">
                     <a href="#de-profil">
                         <span class="icon"><ion-icon name="person-circle-sharp"></ion-icon></span>
                         <span class="text">Profil</span>
                     </a>
                 </div>
-                <div class="navbar-items">
+                <div class="navbar-items de-study">
                     <a href="#de-study">
                         <span class="icon"><ion-icon name="school-sharp"></ion-icon></span>
                         <span class="text">Pendidikan</span>
                     </a>
                 </div>
-                <div class="navbar-items">
+                <div class="navbar-items de-family">
                     <a href="#de-family">
                         <span class="icon"><ion-icon name="people-circle-sharp"></ion-icon></span>
                         <span class="text">Keluarga</span>
                     </a>
                 </div>
-                <div class="navbar-items">
+                <div class="navbar-items de-experience">
                     <a href="#de-experience">
                         <span class="icon"><ion-icon name="leaf-sharp"></ion-icon></span>
                         <span class="text">Pengalaman</span>
                     </a>
                 </div>
-                <div class="navbar-items">
+                <div class="navbar-items de-project">
                     <a href="#de-project">
                         <span class="icon"><ion-icon name="layers-sharp"></ion-icon></span>
                         <span class="text">Proyek</span>
@@ -123,10 +123,10 @@
             <div class="contact-list">
                 <div class="title">Kontak Saya</div>
                 <div class="list">
-                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a class="facebook" href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a class="instagram" href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a class="whatsapp" href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                    <a class="twitter" href="#"><ion-icon name="logo-twitter"></ion-icon></a>
                 </div>
             </div>
             <div class="afiliasi">
@@ -137,34 +137,7 @@
             </div>
         </div>
     </div>
-    <!-- 7.49 -->
-    <script>
-        const navbarItems = document.querySelectorAll(".navbar-items a");
-        const linkMain = document.querySelector(".logo a");
-
-        navbarItems.forEach(function(item) {
-            item.addEventListener("click", function(e) {
-                e.preventDefault();
-                const target = this.getAttribute("href");
-                const element = document.querySelector(target);
-                const topPos = element.offsetTop;
-                window.scrollTo({top: topPos,behavior: "smooth"});
-
-                navbarItems.forEach(function(navItem) {
-                navItem.closest(".navbar-items").classList.remove("active");
-                });
-
-                this.closest(".navbar-items").classList.add("active");
-            });
-        });
-        linkMain.addEventListener("click", function(e) {
-            e.preventDefault();
-            const target = this.getAttribute("href");
-            const element = document.querySelector(target);
-            const topPos = element.offsetTop;
-            window.scrollTo({top: topPos,behavior: "smooth"});
-        });
-    </script>
+    <script src="config.js"></script>
     <script>
         var btn = document.querySelector('.buttons');
         var menu = document.querySelector('.navbar');

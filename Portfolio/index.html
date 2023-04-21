@@ -13,7 +13,7 @@
     <div class="container">
         <div class="header">
             <div class="logo">
-                <a href="/Portfolio/">Portofolio</a>
+                <a href="#de-main">Portofolio</a>
             </div>
             <div class="buttons"><ion-icon id="ionicons" name="menu-sharp"></ion-icon></div>
             <div class="navbar">
@@ -140,6 +140,7 @@
     <!-- 7.49 -->
     <script>
         const navbarItems = document.querySelectorAll(".navbar-items a");
+        const linkMain = document.querySelector(".logo a");
 
         navbarItems.forEach(function(item) {
             item.addEventListener("click", function(e) {
@@ -147,10 +148,7 @@
                 const target = this.getAttribute("href");
                 const element = document.querySelector(target);
                 const topPos = element.offsetTop;
-                window.scrollTo({
-                top: topPos,
-                behavior: "smooth"
-                });
+                window.scrollTo({top: topPos,behavior: "smooth"});
 
                 navbarItems.forEach(function(navItem) {
                 navItem.closest(".navbar-items").classList.remove("active");
@@ -158,6 +156,13 @@
 
                 this.closest(".navbar-items").classList.add("active");
             });
+        });
+        linkMain.addEventListener("click", function(e) {
+            e.preventDefault();
+            const target = this.getAttribute("href");
+            const element = document.querySelector(target);
+            const topPos = element.offsetTop;
+            window.scrollTo({top: topPos,behavior: "smooth"});
         });
     </script>
     <script>
@@ -174,18 +179,6 @@
                 icons.name = 'close-sharp';
             }
         })
-    </script>
-    <script>
-        var thisLink = document.querySelectorAll('.navbar-items a');
-        var thisItems = document.querySelectorAll('.navbar-items');
-
-        function activeLink(){
-            thisLink.forEach((target) =>
-            target.classList.remove('active'));
-            this.classList.add('active');
-        }
-        thisLink.forEach((target) =>
-        target.addEventListener('click', activeLink));
     </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

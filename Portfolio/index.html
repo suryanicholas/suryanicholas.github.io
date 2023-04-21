@@ -176,14 +176,15 @@
         })
     </script>
     <script>
-        var items = document.querySelectorAll('.navbar-items');
+        var thisLink = document.querySelectorAll('.navbar-items a');
+        var thisItems = document.querySelectorAll('.navbar-items');
 
         function activeLink(){
-            items.forEach((target) =>
+            thisLink.forEach((target) =>
             target.classList.remove('active'));
             this.classList.add('active');
         }
-        items.forEach((target) =>
+        thisLink.forEach((target) =>
         target.addEventListener('click', activeLink));
     </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

@@ -158,7 +158,12 @@ body{
 #de-experience .title{
     margin-bottom: 10px;
 }
-
+#de-project{
+    align-items: center;
+}
+#de-project .title{
+    margin-bottom: 10px;
+}
 
 .footer{
     display: flex;

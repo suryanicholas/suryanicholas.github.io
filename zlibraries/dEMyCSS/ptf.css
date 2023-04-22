@@ -11,170 +11,139 @@
 }
 
 body{
-    width: 100%;
-    background: #d9c4ff;
-}
-
-header{
-    position: fixed;
-    top: 0;
-    display: flex;
-    width: 100%;
-    height: 50px;
-    align-items: center;
-    background: #0a001d;
-    z-index: 99;
-}
-.logo{
-    margin-left: 10px;
-}
-.logo a{
-    color: #fff;
-    font-size: 30px;
-    text-decoration: none;
-}
-.tombol{
-    display: none;
-}
-header .menu{
-    position: absolute;
-    right: 0;
-    display: flex;
-}
-header .menu .menu-link{
-    margin-right: 10px;
-    width: 120px;
-    text-align: center;
-}
-header .menu .menu-link a{
-    color: #ffffff75;
-    font-size: 18px;
-    font-weight: 900;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: .5s;
-}
-header .menu .menu-link a:hover{
-    color: #ffffff;
-}
-
-section{
-    display: flex;
-    align-items: center;
-    padding: 60px 20px;
-    height: 100vh;
-}
-.section{
-    display: flex;
-    width: 100%;
-    background: #fff;
-    height: fit-content;
-    border-radius: 250px 10px 10px 250px;
-}
-.foto-saya{
-    align-items: center;
-}
-.foto-saya img{
-    width: 360px;
-    border-radius: 100%;
-    box-shadow: 3px 0 15px;
-    transform: translateY(2px);
-}
-.section .konten h1{
-    display: flex;
-    color: #fff;
-    font-size: 36px;
-    background: #5900ff;
-    padding-left: 30px;
-    border-radius: 0 0 0 120px;
-}
-.section .konten .text{
-    padding-top: 10px;
-    padding-left: 30px;
-    color: #000;
-    font-size: 28px;
-}
-
-footer{
-    padding-top: 30px;
-    display: flex;
-    justify-content: center;
-    background: #0a001d;
-    min-height: 25vh;
-}
-.list-link, .contacts{
-    width: 100%;
-    margin: 20px;
-}
-footer .title{
-    margin-bottom: 10px;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 900;
-    width: 200px;
-}
-.list-link a{
-    display: list-item;
-    text-align: left;
-    list-style: none;
-    color: #ffffff89;
-    width: fit-content;
-    text-decoration: none;
-}
-.list-link a:hover{
-    color: #fff;
-}
-
-.contacts .list a{
-    margin: 0 10px;
-    font-size: 36px;
-    color: #ffffff89;
-}
-.contacts .list a:hover{
-    color: #fff;
+    background: #e0cdff;
 }
 
 @media (max-width:425px){
+    /* Header */
+    header{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        background: #8400ff;
+    }
+    .logo{
+        margin: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .logo a{
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 30px;
+        font-weight: bold;
+    }
     .tombol{
         position: absolute;
         right: 0;
-        display: block;
-        color: #fff;
-        font-size: 30px;
-    }
-    header .menu{
-        display: none;
-    }
-    
-    .foto-saya img{
-        width: 200px;
-    }
-
-    section{
+        width: 50px;
+        height: 50px;
         display: flex;
         align-items: center;
-        padding: 0 5px;
-        height: 100vh;
+        justify-content: center;
+        color: #00000089;
+        font-size: 28px;
+        transition: .5s;
     }
-    .section{
-        display: flex;
+    .tombol.aktif{
+        color: #fff;
+    }
+    .menu{
+        position: absolute;
+        top: 50px;
+        padding: 10px 0;
         width: 100%;
+        display: none;
+        text-align: center;
+        background: #8400ffd0;
+        z-index: -1;
+    }
+    .menu.tampil{
+        display: block;
+    }
+    .menu a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+
+    }
+    /* Section */
+    .foto-saya img{
+        width: 160px;
+        border-radius: 50%;
+    }
+    section{
+        display: flex;
+        height: 100vh;
+        padding: 70px 10px 0;
+        align-items: center;
+    }
+    #beranda .foto-saya{
+        display: flex;
+        justify-content: center;
+    }
+    #beranda .text{
+        margin-top: 15px;
+        padding: 10px;
+        text-align: center;
         background: #fff;
-        height: auto;
+        border-radius: 20px;
+    }
+    #pendidikan .foto-saya{
+        display: flex;
+        align-items: center;
+    }
+    #pendidikan .foto-saya img{
+        width: 120px;
         border-radius: 0;
     }
-    .section .konten h1{
+    #pendidikan .section{
         display: flex;
-        color: #fff;
-        font-size: 24px;
-        background: #5900ff;
-        padding-left: 30px;
-        border-radius: 0 0 0 120px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 20px;
     }
-    .section .konten .text{
-        padding-top: 10px;
-        padding-left: 20px;
-        color: #000;
-        font-size: 16px;
+    #pendidikan .konten {
+        margin-left: 5px;
+    }
+    #pendidikan .text{
+        font-size: 14px;
+    }
+    #pendidikan .baris4{
+        background: #000;
+        padding: 5px;
+        color:#fff;
+        border-radius: 5px;
+    }
+    /* Footer */
+    footer{
+        display: flex;
+        padding: 10px;
+        background: #8400ff;
+    }
+    footer .konten{
+        width: 100%;
+    }
+    footer .konten .title{
+        color: #1a0033;
+        margin-bottom: 1px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    footer .links a{
+        display: list-item;
+        width: fit-content;
+        list-style: none;
+        color: #3b0072;
+        text-decoration: none;
+    }
+    footer .kontak a{
+        font-size: 25px;
+        color: #3b0072;
     }
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping</title>
+    <style>
+        @font-face {
+            font-family: 'Play';
+            src: url(/zlibraries/dEthisGoogleFonts/Play-Regular.ttf);
+        }
+        body{
+            margin: 20px 100px;
+        }
+        button{
+            margin: 3px;
+            width: 50px;
+            height: 50px;
+            font-size: 16px;
+            font-weight: 900;
+            background: #fff;
+            border: none;
+            border-radius: 50px;
+            box-shadow: inset -3px -3px 5px #00d9ff88,
+            inset 0 0 30px #c5f6ff88;
+            font-family: 'Play';
+            cursor: pointer;
+            transition: .5s;
+        }
+        button:hover{
+            box-shadow: inset -3px -3px 5px #31140088,
+            inset 0 0 30px #c5f6ff88;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var i,c;
+        for(i=0;i<220;i++){
+            document.write("<button class='btn",i + 1,"'>",i + 1,"</button>");
+        }
+    </script>
+</body>
+</html>

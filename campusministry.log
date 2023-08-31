@@ -1,1 +1,68 @@
+http://localhost:8080/			  || AUTHORITY : VISITOR
+ - Penanganan Formulir
+ - Penanganan Sesi
+ - Penanganan Respon
 
+http://localhost:8080/dashboard		  || AUTHORITY : USER
+ - Penanganan Informasi
+ - Penanganan Otorisasi
+ - Penanganan Pengalihan (Belum Lengkap)
+
+http://localhost:8080/profil		  || AUTHORITY : USER
+ - Penanganan Informasi
+ - Penanganan Otorisasi
+ - Penanganan Pengalihan (Belum Lengkap)
+
+http://localhost:8080/profil?edit         || AUTHORITY : USER
+ - Penanganan Informasi
+ - Penanganan Otorisasi
+ - Penanganan Formulir
+ - Penanganan Pengalihan (Belum Lengkap)
+ - Penanganan Respon
+
+http://localhost:8080/layanan             || AUTHORITY : STUDENT
+ - Penanganan Informasi
+ - Penanganan Otorisasi
+ - Penanganan Pengalihan (Belum Lengkap)
+
+http://localhost:8080/layanan?konseling   || AUTHORITY : OFFICER
+ - Penanganan Informasi (Masih diteliti)
+ - Penanganan Otorisasi
+ - Penanganan Formulir (Kekurangan Informasi)
+ - Penanganan Pengalihan (Belum Lengkap)
+ - Penanganan Respon
+
+http://localhost:8080/layanan?psikologi	  || AUTHORITY : STUDENT
+ - Penanganan Informasi (Masih diteliti)
+ - Penanganan Otorisasi
+ - Penanganan Formulir (Kekurangan Informasi)
+ - Penanganan Pengalihan (Belum Lengkap)
+ - Penanganan Respon
+
+http://localhost:8080/layanan?kesehatan	  || AUTHORITY : STUDENT
+ - Penanganan Informasi (Masih diteliti)
+ - Penanganan Otorisasi
+ - Penanganan Formulir (Kekurangan Informasi)
+ - Penanganan Pengalihan (Belum Lengkap)
+ - Penanganan Respon
+
+http://localhost:8080/layanan?spiritual	  || AUTHORITY : STUDENT
+ - Penanganan Informasi (Masih diteliti)
+ - Penanganan Otorisasi
+ - Penanganan Formulir (Kekurangan Informasi)
+ - Penanganan Pengalihan (Belum Lengkap)
+ - Penanganan Respon
+
+http://localhost:8080/layanan?jadwal      || AUTHORITY : STUDENT
+ - Penanganan Informasi (Masih diteliti)
+ - Penanganan Otorisasi
+ - Penanganan Formulir (Kekurangan Informasi)
+ - Penanganan Pengalihan (Belum Lengkap)
+ - Penanganan Respon
+
+http://localhost:8080/layanan?jadwalku    || AUTHORITY : STUDENT
+ - Penanganan Informasi (Masih diteliti)
+ - Penanganan Otorisasi
+ - Penanganan Formulir (Kekurangan Informasi)
+ - Penanganan Pengalihan (Belum Lengkap)
+ - Penanganan Respon

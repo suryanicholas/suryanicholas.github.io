@@ -1,26 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 *{
     margin: 0;
-    box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-:root{
-    --pri-0: #ff2600;
-    --sec-0: #00f7ff;
-    --thr-0: #ff0062;
-}
-::-webkit-scrollbar{
-    display: none;
-}
-
-body{
-    background: #001718;
-    overscroll-behavior: none;
-}
-.container{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    padding: 0;
 }

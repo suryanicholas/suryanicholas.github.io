@@ -1,4 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Play:wght@400;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 *{
     margin: 0;
-    padding: 0;
+    user-select: none;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+body{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    overscroll-behavior: none;
+}
+
+.container{
+    position: relative;
+    background: #d8cdee;
+    width: inherit;
+    height: inherit;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 50px;
+    scroll-behavior: smooth;
+}
+
+.header{
+    position: sticky;
+    top: 0;
+    background: linear-gradient(#fff, #bbbbbb);
+    width: inherit;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+.zeinzh{
+    position: relative;
+    width: 260px;
+    height: inherit;
+    background: #f1f1f1 center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    font-family: "Anta", sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    box-shadow: inset -8px 0 6px #00000085;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: .5s;
+    z-index: 1;
+    cursor: pointer;
+}
+.zeinzh span:nth-child(1){
+    position: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    z-index: 0;
+}
+.zeinzh span:nth-child(2){
+    position: absolute;
+    background: url("/assets/img/sample.png") no-repeat center;
+    background-size: cover;
+    content: " ";
+    width: inherit;
+    height: inherit;
+    box-shadow: inset -8px 0 6px #00000085, inset -1px 0 0 #000;
+    transition: .3s;
+    opacity: 0;
+}
+.zeinzh:hover span:nth-child(1){
+    opacity: 0;
+}
+.zeinzh:hover span:nth-child(2){
+    opacity: 1;
+}
+.navigation{
+    width: calc(100vw - 260px);
+    height: inherit;
+    display: flex;
+    justify-content: right;
+}
+.pointer{
+    position: absolute;
+    width: 160px;
+    height: inherit;
+    background: linear-gradient(#0000009f, #fff);
+    box-shadow: inset 3px 6px 6px #00000033,
+    inset -3px 6px 6px #00000033,
+    0 -4px 4px #181818;
+    z-index: -1;
+    transition: .3s;
+}
+.nav-items{
+    margin-right: 20px;
+    width: 160px;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+.nav-items a{
+    color: #0000005e;
+    font-size: 24px;
+    font-family: 'Anta', sans-serif;
+    text-decoration: none;
+    display: flex;
+    transition: .3s;
+}
+.nav-items a:hover{
+    color: #000;
+}
+
+.nav-items.active a{
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+}
+
+.contents{
+    position: relative;
+    background: #fff;
+    width: inherit;
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+}
+.content-area{
+    flex: 1;
+}
+
+#beranda .content-area{
+    display: flex;
+}
+#beranda .canvas-images{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#beranda .canvas-images .content-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#beranda .canvas-images .my-images{
+    background: url("https://www.transparentpng.com/thumb/man/rTkJ7v-man-png-image.png") top no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+#beranda .content-area .canvas-information{
+    padding: 0 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#beranda .content-area .canvas-information div{
+    font-family: 'Anta',sans-serif;
+}
+#beranda .content-area .canvas-information div:nth-child(1){
+    font-size: 44px;
+}
+#beranda .content-area .canvas-information div:nth-child(2){
+    font-size: 24px;
+}
+#beranda .content-area .canvas-information div:nth-child(3){
+    margin: 10px 0;
+    text-align: center;
+}
+#beranda .content-area .canvas-information div:nth-child(4){
+    margin: 10px 0;
+    font-size: 48px;
+}
+#beranda .content-area .canvas-information div:nth-child(4) a{
+    margin: 0 10px;
+    color: #00000083;
+    text-decoration: none;
+    transition: .3s;
+}
+#beranda .content-area .canvas-information div:nth-child(4) a:hover{
+    color: var(--col-self);
 }

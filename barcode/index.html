@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quagga</title>
+    <link rel="stylesheet" href="asset/css/style.css">
 </head>
 <body>
-    <div id="camera"></div>
-    <button type="button" onclick="Pindai()">Pindai</button>
+    <div class="container">
+        <div class="canvas">
+            <div id="camera"></div>
+        </div>
+        <div class="control">
+            <button type="button" onclick="Pindai();">Mulai</button>
+            <div class="output">
+                <span>TEKS</span>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="quagga.min.js"></script>
     <script>
         function Pindai(){
@@ -33,11 +44,7 @@
                 const code = data.codeResult.code;
                 Quagga.stop();
 
-                if(code === "Surya Nicholas"){
-                    console.log("Nama");
-                } else if (code === "13032001"){
-                    console.log("Tanggal Lahir");
-                }
+                $(".output span").text(code);
               });
         }
     </script>

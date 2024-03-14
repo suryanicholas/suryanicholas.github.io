@@ -136,6 +136,41 @@ function loadJS(){
         case "project-barcode":
             switch (currentContent){
                 case "barcode-list":
+                    class _JSON{
+
+                        static export(data){
+                            let a = typeof data;
+                            
+                            // Memastikan Data adalah Object
+                            if(a !== "object"){
+                                console.log("ERROR: Masukan tidak dapat diproses.");
+                                return 0;
+                            }
+                    
+                            // Memastikan Data tidak kosong
+                            if(data.length <= 0){
+                                console.log("ERROR: Data yang dimasukan kosong!");
+                                return 0;
+                            }
+                    
+                            // Menyiapkan Data
+                            let __JSON = JSON.stringify(data);
+                            let __BLOB = new Blob([__JSON], {type: 'application/json'});
+                            let __URL = URL.createObjectURL(__BLOB);
+                    
+                            // Membangun DOM untuk pengunduhan
+                            let __DOM = document.createElement('a');
+                            __DOM.href = __URL;
+                            __DOM.download = "__DATA.json";
+                            __DOM.innerHTML = 'Unduh file JSON';
+                    
+                            // Mulai mengunduh
+                            document.body.appendChild(__DOM);
+                            __DOM.click();
+                            document.body.removeChild(__DOM);
+                        }
+                    }
+
                     function showData() {
                         let setTable = $(".data-table .tbody");
                         $(setTable).html("");
@@ -158,6 +193,11 @@ function loadJS(){
                             $(setTable).append(setRow);
                         }
                     }
+
+                    $("#export").click(function (e) { 
+                        e.preventDefault();
+                        let __DATA = {};
+                    });
 
                     $("form button").click(function (e) { 
                         e.preventDefault();

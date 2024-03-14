@@ -196,7 +196,7 @@ function loadJS(){
 
                     $("#export").click(function (e) { 
                         e.preventDefault();
-                        let __DATA = {};
+                        _JSON.export(localStorage);
                     });
 
                     $("form button").click(function (e) { 

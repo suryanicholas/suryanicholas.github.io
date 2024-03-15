@@ -307,6 +307,7 @@ function loadJS(){
                         let colPrice = $("input[name='harga']").val();
                         addProduct([colCode,colName,colPrice]);
                         showData();
+                        loadJS();
 
                         $("input[name='code']").val("");
                         $("input[name='nama']").val("");

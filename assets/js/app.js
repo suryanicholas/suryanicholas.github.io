@@ -102,35 +102,39 @@ function addProduct(data) {
 
 function quaggaInit() {
     $(".data-panel").css('display', "flex");
-    Quagga.init({
-        inputStream : {
-            name : "Live",
-            type : "LiveStream",
-            target: document.querySelector('#camera')    // Or '#yourElement' (optional)
-        },
-        decoder : {
-            readers : ["ean_reader"]
-        },
-        locator: {
-            patchSize: "medium",
-            halfSample: true
-        },
-        locator: true,
-        frequency: 5,
-    }, function(err) {
-        if (err) {
-            console.log(err);
-            return
-        }
-        $("#camera").css('display', "flex");
-        Quagga.start();
-    });
+    if(isQuaggaInit === false){
+        Quagga.init({
+            inputStream : {
+                name : "Live",
+                type : "LiveStream",
+                target: document.querySelector('#camera')    // Or '#yourElement' (optional)
+            },
+            decoder : {
+                readers : ["ean_reader"]
+            },
+            locator: {
+                patchSize: "medium",
+                halfSample: true
+            },
+            locator: true,
+            frequency: 5,
+        }, function(err) {
+            if (err) {
+                console.log(err);
+                return
+            }
+            Quagga.start();
+            isQuaggaInit = true;
+        });
+    }
 
+    $("#camera").css('display', "flex");
+    isDetecting = true;
     Quagga.onDetected(function (data) {
         $("input[name='code']").val(data.codeResult.code);
         
-        Quagga.stop();
         Quagga.offDetected();
+        isDetecting = false;
 
         
         $("#camera").hide();
@@ -306,7 +310,6 @@ function loadJS(){
                         let colName = $("input[name='nama']").val();
                         let colPrice = $("input[name='harga']").val();
                         addProduct([colCode,colName,colPrice]);
-                        showData();
 
                         $("input[name='code']").val("");
                         $("input[name='nama']").val("");
@@ -314,6 +317,8 @@ function loadJS(){
 
                         $("#panel").hide();
                         $(".data-panel").hide();
+                        showData();
+                        loadJS();
                     });
 
                     $("#panel ion-icon[name='close']").click(function (e) { 
@@ -354,6 +359,7 @@ function loadJS(){
                                 localStorage.setItem("nama", JSON.stringify(__DATA.nama));
                                 localStorage.setItem("harga", JSON.stringify(__DATA.harga));
                                 showData();
+                                loadJS();
                             }
                         });
                     });

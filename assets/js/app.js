@@ -9,7 +9,6 @@ var checkoutsData = {
     harga: [],
     total: []
 };
-
 if(localStorage.length < 1){
     localStorage.setItem('kode','[]');
     localStorage.setItem('nama','[]');
@@ -18,6 +17,73 @@ if(localStorage.length < 1){
 // localStorage.clear();
 // console.log(3 <= 3);
 
+class __DIALOG{
+    
+    static __DOM(title, messages, trueText, falseText){
+        let alertPanel = document.createElement("div");
+        let alertContent = document.createElement("div");
+        let alertTitle = document.createElement("div");
+        let alertTitleSpan = document.createElement("span");
+        let alertTitleIcon = document.createElement("ion-icon");
+        let alertMessages = document.createElement("div");
+        let alertMessagesSpan = document.createElement("span");
+        let alertControl = document.createElement("div");
+        let alertControlFalse = document.createElement("div");
+        let alertControlTrue = document.createElement("div");
+
+        alertPanel.id = "alertPanel";
+        alertContent.className = "alert-content";
+        alertTitle.className = "title";
+        alertTitleSpan.textContent = title || "Alert";
+        alertTitleIcon.setAttribute("name", "close");
+        alertMessages.className = "messages";
+        alertMessagesSpan.textContent = messages || "Server says: ";
+        alertControl.className = "control";
+        alertControlFalse.className = "alert-false";
+        alertControlFalse.textContent = falseText || "Close";
+        alertControlTrue.className = "alert-true";
+        alertControlTrue.textContent = trueText || "Confirm";
+
+        $(alertTitle).append(alertTitleSpan);
+        $(alertTitle).append(alertTitleIcon);
+        $(alertMessages).append(alertMessagesSpan);
+        $(alertControl).append(alertControlFalse);
+        $(alertControl).append(alertControlTrue);
+
+        $(alertContent).append(alertTitle);
+        $(alertContent).append(alertMessages);
+        $(alertContent).append(alertControl);
+        
+        $(alertPanel).append(alertContent);
+
+        return alertPanel;
+    }
+
+    static show(content,callback){
+        if(typeof content !== "object" || content.length < 2 || content.length > 2){
+            console.log("Kesalahan sintaksis parameter! " + content);
+            return 0;
+        }
+
+        $(".container").append(__DIALOG.__DOM(content[0],content[1],'Konfirmasi','Batalkan'));
+        
+        $("#alertPanel ion-icon[name='close']").click(function (e) { 
+            e.preventDefault();
+            $("#alertPanel").remove();
+        });
+
+        $("#alertPanel .alert-false").click(function (e) { 
+            e.preventDefault();
+            callback(false);
+            $("#alertPanel").remove();
+        });
+        $("#alertPanel .alert-true").click(function (e) { 
+            e.preventDefault();
+            callback(true);
+            $("#alertPanel").remove();
+        });
+    }
+}
 
 function addProduct(data) {
     if(Array.isArray(data) && data.length <= 3){
@@ -171,6 +237,33 @@ function loadJS(){
                         }
                     }
 
+                    $("#import").click(function (e) { 
+                        e.preventDefault();
+                        $("#import-json").click();
+                    });
+
+                    $("#import-json").change(function (e) { 
+                        let jsonFile = e.target.files[0];
+                        let reader = new FileReader();
+
+                        reader.onload = function(e){
+                            let jsonContent = e.target.result;
+                            let jsonData;
+
+                            try{
+                                jsonData = JSON.parse(jsonContent);
+
+                                localStorage.setItem('kode', JSON.stringify(jsonData.kode));
+                                localStorage.setItem('nama', JSON.stringify(jsonData.nama));
+                                localStorage.setItem('harga', JSON.stringify(jsonData.harga));
+                            } catch(e){
+                                console.log(e);
+                            }
+                        };
+
+                        reader.readAsText(jsonFile);
+                    });
+
                     function showData() {
                         let setTable = $(".data-table .tbody");
                         $(setTable).html("");
@@ -196,7 +289,15 @@ function loadJS(){
 
                     $("#export").click(function (e) { 
                         e.preventDefault();
-                        let __DATA = {};
+                        let setData = {
+                            kode: [],
+                            nama: [],
+                            harga: []
+                        };
+                        setData.kode = JSON.parse(localStorage.kode);
+                        setData.nama = JSON.parse(localStorage.nama);
+                        setData.harga = JSON.parse(localStorage.harga);
+                        _JSON.export(setData);
                     });
 
                     $("form button").click(function (e) { 
@@ -227,6 +328,35 @@ function loadJS(){
                     });
                     
                     showData();
+                    $(".data-table .tbody .tr").click(function (e) { 
+                        e.preventDefault();
+                        let __CODE = $(this).find(".td:first-child").text();
+                        let __DATA = {
+                            kode: JSON.parse(localStorage.kode),
+                            nama: JSON.parse(localStorage.nama),
+                            harga: JSON.parse(localStorage.harga)
+                        }
+                        let __INDEX = -1;
+
+                        for(let i = 0; i < __DATA.kode.length; i++){
+                            if(__DATA.kode[i] === __CODE){
+                                __INDEX = i;
+                                break;
+                            }
+                        }
+                        __DIALOG.show(['Konfirmasi Tindakan','Apakah anda ingin menghapus ' + __DATA.nama[__INDEX] + " dari daftar?"], function(e){
+                            if(e){
+                                __DATA.kode.splice(__INDEX, 1);
+                                __DATA.nama.splice(__INDEX, 1);
+                                __DATA.harga.splice(__INDEX, 1);
+
+                                localStorage.setItem("kode", JSON.stringify(__DATA.kode));
+                                localStorage.setItem("nama", JSON.stringify(__DATA.nama));
+                                localStorage.setItem("harga", JSON.stringify(__DATA.harga));
+                                showData();
+                            }
+                        });
+                    });
                 break;
                 case "barcode-scan":
                     Quagga.init({

@@ -354,7 +354,6 @@ function loadJS(){
                                 localStorage.setItem("nama", JSON.stringify(__DATA.nama));
                                 localStorage.setItem("harga", JSON.stringify(__DATA.harga));
                                 showData();
-loadJS();
                             }
                         });
                     });

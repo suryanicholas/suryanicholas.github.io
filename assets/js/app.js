@@ -110,7 +110,7 @@ function quaggaInit() {
                 target: document.querySelector('#camera')    // Or '#yourElement' (optional)
             },
             decoder : {
-                readers : ["ean_reader"]
+                readers : ["code_128_reader","ean_reader"]
             },
             locator: {
                 patchSize: "medium",
@@ -372,7 +372,7 @@ function loadJS(){
                             target: document.querySelector('#camera')    // Or '#yourElement' (optional)
                         },
                         decoder : {
-                            readers : ["ean_reader"]
+                            readers : ["code_128_reader","ean_reader"]
                         },
                         locator: {
                             patchSize: "medium",

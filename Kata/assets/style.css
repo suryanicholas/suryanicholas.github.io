@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+        
+*{
+    margin: 0;
+    font-family: 'Anta', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    user-select: none;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input{
+    background: transparent;
+    width: 65px;
+    outline: none;
+    border: 2px solid #0a610e;
+    margin: 0 10px;
+    text-align: center;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+body{
+    background: #eeebe8;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 20px #000;
+}
+.container{
+    margin: 50px;
+    padding: 35px;
+    background: #054408;
+    border: 10px solid #140b01;
+    border-radius: 30px;
+    box-shadow: 0 0 15px #000, inset 0 0 30px #140b01;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Title */
+#title{
+    height: 3.5vw;
+    display: flex;
+    justify-content: center;
+}
+#title div{
+    margin: 0 .5vw;
+    width: 3.5vw;
+    height: 3.5vw;
+    border-radius: 100%;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: .3vw .3vw .6vw #000000a9,
+    inset -.3vw -.3vw .3vw #022204ce,
+    inset .3vw .3vw .3vw #229c2857;
+    overflow: hidden;
+}
+#title span{
+    width: 3.5vw;
+    height: 3.5vw;
+    border-radius: 100%;
+    font-size: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Panel */
+#panel{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#panel .quest{
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    box-shadow: inset 0 0 10px #021d03;
+}
+#panel .quest .text{
+    display: flex;
+    justify-content: center;
+}
+#panel .quest .text span{
+    font-size: 2vw;
+}
+#panel .quest .text span:nth-child(2){
+    margin-left: .6vw;
+}
+#panel .quest .answer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#panel .quest input{
+    margin: 10px 0;
+    width: 28vw;
+    height: 2.5vw;
+    font-size: 2vw;
+}
+#panel .quest input::placeholder{
+    color: #16a01d;
+}
+#panel .quest ion-icon{
+    margin-left: 1vw;
+    border-radius: 100%;
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+#panel .keyboards{
+    height: calc(16vw + 30px);
+    display: flex;
+    flex-direction: column;
+}
+#panel .keyboards div{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+@keyframes neonKeyboards {
+    0%{
+        color: #ff0000;
+        box-shadow: 0 0 3px #ff0000;
+    }
+    20%{
+        color: #ffff00;
+        box-shadow: 0 0 3px #ffff00;
+    }
+    40%{
+        color: #00ff00;
+        box-shadow: 0 0 3px #00ff00;
+    }
+    60%{
+        color: #00ffff;
+        box-shadow: 0 0 3px #00ffff;
+    }
+    80%{
+        color: #0000ff;
+        box-shadow: 0 0 3px #0000ff;
+    }
+    100%{
+        color: #ff0000;
+        box-shadow: 0 0 3px #ff0000;
+    }
+}
+#panel .keyboards div a{
+    margin: 3px;
+    width: 4vw;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2vw;
+    transition: .3s;
+    cursor: pointer;
+    animation: neonKeyboards 20s infinite;
+}
+#panel .keyboards div a[data-key=' ']{
+    width: calc(20vw + 24px);
+    transform: translateX(calc(-2vw - 3px));
+}
+#panel .keyboards div a.true{
+    background: #fff;
+}
+#panel .keyboards div a:active{
+    background: #fff;
+}
+
+#alertPanel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+#alertPanel .alert-content{
+    margin: 30vh 25vw;
+    padding: 5px;
+    border-radius: 5px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+#alertPanel .title {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #000;
+}
+#alertPanel .title span{
+    margin-right: 5px;
+    color: #000;
+    font-size: 2vw;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#alertPanel .title ion-icon{
+    color: #000;
+    display: flex;
+    font-size: 2vw;
+    cursor: pointer;
+}
+#alertPanel .messages{
+    margin: 5px;
+    flex: 1;
+}
+#alertPanel .messages span{
+    color: #000;
+    font-size: 2vw;
+}
+#alertPanel .control{
+    display: flex;
+}
+#alertPanel .control .alert-false,
+#alertPanel .control .alert-true{
+    margin: 0 4vw;
+    border: 2px solid #000;
+    border-radius: 5px;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
+    flex: 1;
+    cursor: pointer;
+}
+#alertPanel .control .alert-false{
+    background: #ffc8c8;
+}
+#alertPanel .control .alert-true{
+    background: #c8ffcb;
+}

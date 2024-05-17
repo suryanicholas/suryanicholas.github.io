@@ -57,6 +57,7 @@ $(document).ready(function () {
 
         $('#challangesLevel').append(_option);
     }
+    $("#currentPoint").trigger("change");
 });
 
 $("#switchToDD").click(function (e) { 

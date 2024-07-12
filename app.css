@@ -6,3 +6,26 @@ body{
     width: 100vw;
     height: 100vh;
 }
+.indicator{
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+}
+.indicator .active{
+    position: absolute;
+    background: #000;
+    left: 0;
+    height: 4px;
+    width: 0;
+    transition: .25s;
+}
+.indicator .hover{
+    position: absolute;
+    background: #dfdfdf;
+    left: 0;
+    height: 4px;
+    width: 0;
+    transition: .25s;
+    z-index: -1;
+}

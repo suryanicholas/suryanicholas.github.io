@@ -3,200 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DNC | Event Support Tools</title>
-
+    <title>ZEINZH, it's me</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
-        *{
-            margin: 0;
-            padding: 0;
-            user-select: none;
-            font-family: 'Courier New', sans-serif;
-        }
-        ::-webkit-scrollbar{
-            display: none;
-        }
-        body{
-            width: 100vw;
-            height: 100vh;
-        }
-
-        #foodBoard div:nth-child(1),
-        #foodBoard div:nth-child(2){
-            background: #dbdbdb;
-        }
-        #foodBoard div:nth-child(3),
-        #foodBoard div:nth-child(4){
-            background: #a5ff9c;
-        }
-        #foodBoard div:nth-child(5),
-        #foodBoard div:nth-child(6){
-            background: #9bbeff;
-        }
-        #foodBoard div:nth-child(7),
-        #foodBoard div:nth-child(8){
-            background: #ffa7ff;
-        }
-        #foodBoard div:nth-child(9),
-        #foodBoard div:nth-child(10){
-            background: #fff99e;
-        }
-    </style>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-99ZJXPKXBQ"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-99ZJXPKXBQ');
-    </script>
+    <link rel="stylesheet" href="/app.css">
 </head>
 <body>
-    <div class="container-fluid h-100 overflow-auto">
-        <div class="container h-100 overflow-auto">
-            <div class="row">
-                <div class="h3 col-md-12 text-center mt-4">
-                    <span class="text-nowrap bg-secondary-subtle px-2">Dangerous Duel</span>
-                    <span class="text-nowrap bg-secondary-subtle px-2">Ruthless Pursuit</span>
-                </div>
-            </div>
-            <div class="row mt-4 border rounded p-2">
-                <div class="col-md-3">
-                    <div class="mb-3">
-                        <label for="currentPoint" class="form-label">Poin Terkumpul</label>
-                        <input type="text" class="form-control text-end" maxlength="5" id="currentPoint" name="currentPoint" value="0">
-                    </div>
-                    <div class="mb-3 row m-0">
-                        <button id="switchToDD" class="btn btn-success mb-1">Dangerous Duel</button>
-                        <button id="switchToRP" class="btn btn-secondary">Ruthless Pursuit</button>
-                    </div>
-                    <div class="mb-3">
-                        <label for="challangesLevel" class="form-label">Level Tantangan</label>
-                        <select class="form-select" id="challangesLevel" name="challangesLevel" aria-label="Default select example">
-                            
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-9 border">
-                    <div class="row fw-bold bg-secondary-subtle">
-                        <span>Auto Challange</span>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-5 text-nowrap">Penggunaan Stamina</span>
-                        <span class="col-md-7 text-end" id="manualStamina">0</span>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-5 text-nowrap">Tantangan Diselesaikan</span>
-                        <span class="col-md-7 text-end" id="manualAct">0</span>
-                    </div>
-                    <hr>
-                    <div class="row fw-bold bg-secondary-subtle">
-                        <span>Instant Challange</span>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-5 text-nowrap">Penggunaan Stamina</span>
-                        <span class="col-md-7 text-end" id="instantStamina">0</span>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-5 text-nowrap">Penggunaan Energy</span>
-                        <span class="col-md-7 text-end" id="instantEnergy">0</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row text-end">
-                <span class="badge text-dark">Build something different? <a href="https://www.youtube.com/shorts/CTmQlFUvpNc" target="_blank">Subscribe!</a></span>
-            </div>
-        </div>
-        <!-- <div class="container h-100 overflow-auto">
-            <div class="row">
-                <div class="h3 col-md-12 text-center mt-4">
-                    <span class="text-nowrap bg-secondary-subtle px-2">Talent Level</span>
-                </div>
-            </div>
-            <div class="row mt-4 border rounded p-2">
-                <div class="col-md-3">
-                    <div class="row mb-3">
-                        <label for="lvStart" class="form-label">Intimacy Level</label>
-                        <div class="col-md-4 ms-auto">
-                            <input type="text" class="form-control text-end" maxlength="2" id="lvStart" name="lvStart" value="0" autofocus>
-                        </div>
-                        <div class="col-md-auto d-flex align-items-center justify-content-center">
-                            <span>to</span>
-                        </div>
-                        <div class="col-md-4 me-auto">
-                            <input type="text" class="form-control text-end" maxlength="2" id="lvEnd" name="lvEnd" value="60">
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="currentExp" class="form-label">EXP Saat ini</label>
-                        <input type="text" class="form-control text-end" maxlength="5" id="currentExp" name="currentExp" value="0" autofocus>
-                    </div>
-                </div>
-                <div class="col-md-9 border">
-                    <div id="foodBoard" class="row d-flex justify-content-center h-100 align-items-center">
-                        <div class="col-md-1">
-                            <span class="row d-flex justify-content-center py-2"><ion-icon name="heart-outline"></ion-icon></span>
-                            <hr>
-                            <span class="row d-flex justify-content-center">0</span>
-                        </div>
-                        <div class="col-md-1">
-                            <span class="row d-flex justify-content-center text-danger py-2"><ion-icon name="heart"></ion-icon></span>
-                            <hr>
-                            <span class="row d-flex justify-content-center">0</span>
-                        </div>
-                        <div class="col-md-1">
-                            <span class="row d-flex justify-content-center py-2"><ion-icon name="heart-outline"></ion-icon></span>
-                            <hr>
-                            <span class="row d-flex justify-content-center">0</span>
-                        </div>
-                        <div class="col-md-1">
-                            <span class="row d-flex justify-content-center text-danger py-2"><ion-icon name="heart"></ion-icon></span>
-                            <hr>
-                            <span class="row d-flex justify-content-center">0</span>
-                        </div>
-                        <div class="col-md-1">
-                            <span class="row d-flex justify-content-center py-2"><ion-icon name="heart-outline"></ion-icon></span>
-                            <hr>
-                            <span class="row d-flex justify-content-center">0</span>
-                        </div>
-                        <div class="col-md-1">
-                            <span class="row d-flex justify-content-center text-danger py-2"><ion-icon name="heart"></ion-icon></span>
-                            <hr>
-                            <span class="row d-flex justify-content-center">0</span>
-                        </div>
-                        <div class="col-md-1">
-                            <span class="row d-flex justify-content-center py-2"><ion-icon name="heart-outline"></ion-icon></span>
-                            <hr>
-                            <span class="row d-flex justify-content-center">0</span>
-                        </div>
-                        <div class="col-md-1">
-                            <span class="row d-flex justify-content-center text-danger py-2"><ion-icon name="heart"></ion-icon></span>
-                            <hr>
-                            <span class="row d-flex justify-content-center">0</span>
-                        </div>
-                        <div class="col-md-1">
-                            <span class="row d-flex justify-content-center py-2"><ion-icon name="heart-outline"></ion-icon></span>
-                            <hr>
-                            <span class="row d-flex justify-content-center">0</span>
-                        </div>
-                        <div class="col-md-1">
-                            <span class="row d-flex justify-content-center text-danger py-2"><ion-icon name="heart"></ion-icon></span>
-                            <hr>
-                            <span class="row d-flex justify-content-center">0</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+    <div class="container-fluid h-100 bg-primary overflow-y-auto">
+        <header class="row position-sticky sticky-top">
+            <div class="col container">Header</div>
+        </header>
+        <main class="h-100">
+            Main
+        </main>
+        <footer class="h-100">
+            Footer
+        </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="/app.js"></script>
 </body>
 </html>

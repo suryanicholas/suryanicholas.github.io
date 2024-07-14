@@ -1,18 +1,23 @@
 var s;
 $(document).ready(function () {
-    $(".indicator .active").width($("header .navbar .nav-link:first-child").width());
+    $(".indicator .active").width($("header .hn.navbar .nav-link:first-child").width());
 });
 
-$("header .navbar .nav-link").each(function (index, element) {
+$("header .hn.navbar .nav-link").each(function (index, element) {
     $(element).click(function (e) {
         $(".indicator .active").width($(this).width()).css("left", $(this).position().left + "px");
+
+        $(this).parents(".navbar").find(".nav-item").removeClass("active");
+        $(this).closest(".nav-item").addClass("active");
     });
 
     $(element).mouseenter(function () { 
-        $(".indicator .hover").width($(this).width()).css({"left": $(this).position().left + "px", "opacity": "1"});
+        if(!$(this).closest(".nav-item").hasClass("active")){
+            $(".indicator .hover").width($(this).width()).css({"left": $(this).position().left + "px", "opacity": "1"});
+        }
     });
 });
-$("header .navbar").mouseleave(function () { 
+$("header .hn.navbar").mouseleave(function () { 
     clearTimeout(s);
     s = setTimeout(() => {
         $(".indicator .hover").width(0).css("opacity", "0");

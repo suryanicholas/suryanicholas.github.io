@@ -11,43 +11,61 @@
     <link rel="stylesheet" href="/app.css">
 </head>
 <body>
-    <div class="container-fluid h-100 overflow-y-auto">
-        <header class="container">
+    <div class="mc container-fluid h-100 overflow-y-auto">
+        <header class="container position-sticky sticky-top">
             <div class="row">
-                <div class="col-auto">
-                    <a class="nav-link fs-4" href="#">ZEINZH</a>
+                <div class="col-auto d-flex">
+                    <a class="nav-link fs-4 d-flex align-items-center" href="#">
+                        <img src="/logo.png" height="36px" alt="" srcset="">
+                        <span class="ms-2">ZEINZH</span>
+                    </a>
                 </div>
                 <div class="col-auto ms-auto">
-                    <nav class="navbar gap-4">
+                    <nav class="hn navbar gap-4">
                         <div class="indicator">
                             <span class="active"></span>
                             <span class="hover"></span>
                         </div>
                         <div class="nav-item active">
-                            <a class="nav-link" href="#">Beranda</a>
+                            <a class="nav-link" href="#">Introduction</a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link" href="#">Pengenalan</a>
+                            <a class="nav-link" href="#">Experiences</a>
                         </div>
                         <div class="nav-item">
-                            <a class="nav-link" href="#">Pengalaman</a>
+                            <a class="nav-link" href="#">Projects</a>
                         </div>
-                        <div class="nav-item">
-                            <a class="nav-link" href="#">Pencapaian</a>
+                    </nav>
+                </div>
+                <div class="col-auto d-flex">
+                    <div class="vr"></div>
+                </div>
+                <div class="col-auto">
+                    <nav class="hsm navbar gap-3">
+                        <div class="nav-item d-flex">
+                            <a class="nav-link d-flex fs-4" href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+                        </div>
+                        <div class="nav-item d-flex">
+                            <a class="nav-link d-flex fs-4" href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        </div>
+                        <div class="nav-item d-flex">
+                            <a class="nav-link d-flex fs-4" href="#"><ion-icon name="logo-github"></ion-icon></a>
                         </div>
                     </nav>
                 </div>
             </div>
         </header>
-        <main class="container">
-
+        <main class="container h-100 d-flex justify-content-center py-5 bg-warning">
+            
         </main>
-        <footer class="container">
+        <footer class="container bg-danger h-100">
 
         </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="/app.js"></script>
 </body>
 </html>

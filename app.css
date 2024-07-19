@@ -36,7 +36,6 @@ body{
     overflow-y: auto;
     scroll-snap-type: y mandatory;
 }
-
 main,
 footer{
     scroll-snap-align: start;
